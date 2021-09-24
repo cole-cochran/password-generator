@@ -11,14 +11,17 @@ var newPassword = "";
 // Write password to the input
   function generatePassword(){
 
+//While loop to create a prompt and set password length from 8 - 128.    
   while (passwordLength <  8 || passwordLength > 128){
     passwordLength = prompt("Choose a number between 8 and 128 for your new password.");
   }
+ //Creating confirm for character styles.   
     var uppercase = confirm ("Would you like an uppercase character?");
     var lowercase = confirm ("Would you like a lowercase character?");
     var numbers = confirm ("Would you like a number?");
     var special = confirm ("Would you like a special character?");
-  
+
+//If statements to create new array of characters for password.
   if(uppercase){
       passwordChars=passwordChars.concat(upperChars);
     }
@@ -34,7 +37,7 @@ var newPassword = "";
     if(special){
       passwordChars=passwordChars.concat(specialChars);
     }
-  
+//Generating newPassword and returning it displayed.
   for (i = 0; i < passwordLength; i++){
     var index = Math.floor(Math.random() * passwordChars.length)
     var newRandomChar = passwordChars[index];
@@ -52,26 +55,3 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
-
-
-
-//var passwordLength = 0;
-
-//while (password < length || passwordLength > 128){
-//var passwordLength = prompt("Choose a number between 8 and 128 for your new password.");
-//}
-
-
-//function generatePassword() {
- // var Length = document.querySelector("#Length").value;
-  //console.log(Length);
-  // start adding if statements to see if it has an effect on the the display text
-  //var Uppercase = document.querySelector("#Uppercase").checked;
-  //console.log(Uppercase);
-  //var Lowercase = document.querySelector("#Lowercase").checked;
- // console.log(Lowercase);
- // var Numbers = document.querySelector("#Numbers").checked;
-  //console.log(Numbers);
- // var Special = document.querySelector("#Special").checked;
-  //console.log(Special);
